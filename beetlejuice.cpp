@@ -1,16 +1,27 @@
 #include <iostream>
 #include <string>
+#include <vector>
 using namespace std;
 
 string beetlejuice;
+string command;
+string path;
+string parentpath;
 
 int prompt() {
 	cout << "";
 	cin >> beetlejuice;
 	if (beetlejuice != "BEETLEJUICE") {
+        	cout << "C'mon, man! Say, \"BEETLEJUICE\" " << endl;
 		prompt();
 	}
 	return 0;
+}
+
+string SplitFilename (const std::string& str)
+{
+    std::size_t found = str.find_last_of("/\\");
+    return str.substr(0,found);
 }
 
 int main() {
